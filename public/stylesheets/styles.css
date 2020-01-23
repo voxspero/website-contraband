@@ -1,12 +1,91 @@
+body {
+  font: 12px Helvetica, sans-serif;
+}
+
+.navi__link, .navi__link:hover {
+  text-decoration: none;
+}
+
+.navi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background-color: #f8485e;
+  height: 5em;
+  font: 12px Helvetica, sans-serif;
+}
+
+.navi__logospace {
+  position: absolute;
+  top: 0em;
+  left: 0em;
+  margin: 0.5em 0 0 1em;
+}
+
+.navi__logotype {
+  height: 65%;
+  width: 65%;
+}
+
+.navi__link-list {
+  margin: auto;
+  padding: 0em;
+}
+
+.navi__item {
+  display: inline;
+  padding: 1em 3em;
+}
+
+.navi__link {
+  font: bold 24px Helvetica, sans-serif;
+  color: #fedd00;
+}
+
+.navi__link:hover {
+  color: #74d1ea;
+}
+
+.navi__link-divider {
+  font: bold 24px Helvetica, sans-serif;
+  color: #74d1ea;
+}
+
 .welcome {
-  background-color: #f5f5c8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #ffffef;
+  height: 26em;
 }
 
 .welcome__header {
-  font: 24px Helvetica, sans-serif;
+  font: 48px Helvetica, sans-serif;
 }
 
 .welcome__text {
   font: 12px Helvetica, sans-serif;
+}
+
+.welcome__bottom-line {
+  border: 1px dashed #f8485e;
+}
+
+.welcome__content {
+  text-align: center;
+}
+
+.welcome__header {
+  font: 48px Helvetica, sans-serif;
 }
 /*# sourceMappingURL=styles.css.map */

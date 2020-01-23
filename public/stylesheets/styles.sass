@@ -1,15 +1,77 @@
-$color-background: rgb(245,245,200)
-$font-headers: 24px Helvetica, sans-serif
+$color-background: rgb(255, 255, 239)
+$color-primary: rgb(248, 72, 94)
+$color-secondary: rgb(116,209,234)
+$color-tertiary: rgb(254,221,0)
+$font-headers: 48px Helvetica, sans-serif
 $font-copy: 12px Helvetica, sans-serif
-    
+$font-links: bold 24px Helvetica, sans-serif
+
+body
+    font: $font-copy
+
+%no-decoration
+    text-decoration: none
+
+.navi
+    display: flex
+    align-items: center
+    position: relative
+    background-color: $color-primary
+    height: 5em
+    font: $font-copy
+
+    &__logospace
+        position: absolute
+        top: 0em
+        left: 0em
+        margin: 0.5em 0 0 1em
+
+    &__logotype
+        height: 65%
+        width: 65%
+
+    &__link-list
+        margin: auto
+        padding: 0em
+
+    &__item
+        display: inline
+        padding: 1em 3em
+
+    &__link
+        @extend %no-decoration
+        font: $font-links
+        color: $color-tertiary
+
+    &__link:hover
+        @extend %no-decoration
+        color: $color-secondary
+
+    &__link-divider
+        font: $font-links
+        color: $color-secondary
+
 .welcome
+    display: flex
+    align-items: center
+    justify-content: center
     background-color: $color-background
+    height: 26em
 
     &__header
         font: $font-headers
 
     &__text
         font: $font-copy
+
+    &__bottom-line
+        border: 1px dashed $color-primary
+
+    &__content
+        text-align: center
+
+    &__header
+        font: $font-headers
 
     // &__background
     //     background-image: url('')
