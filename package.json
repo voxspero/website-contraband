@@ -1,0 +1,25 @@
+{
+  "name": "website-contraband",
+  "version": "1.0.0",
+  "description": "practice website for a hot sauce brand",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voxspero/website-contraband.git"
+  },
+  "author": "James Bernhardt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/voxspero/website-contraband/issues"
+  },
+  "homepage": "https://github.com/voxspero/website-contraband#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  }
+}

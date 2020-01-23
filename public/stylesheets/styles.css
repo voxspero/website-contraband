@@ -1,0 +1,12 @@
+.welcome {
+  background-color: #f5f5c8;
+}
+
+.welcome__header {
+  font: 24px Helvetica, sans-serif;
+}
+
+.welcome__text {
+  font: 12px Helvetica, sans-serif;
+}
+/*# sourceMappingURL=styles.css.map */
