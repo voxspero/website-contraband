@@ -2,7 +2,7 @@
   text-decoration: none;
 }
 
-.navi, .welcome, .main, .footer, .footer__left, .footer__center, .footer__right {
+.navi, .welcome, .first, .first__row__content__textspace, .second, .second__row__content, .second__row__content__textspace, .third, .third__row__content, .third__row__content__textspace, .footer, .footer__left, .footer__center, .footer__right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,8 +14,12 @@
           justify-content: center;
 }
 
+.welcome__row, .first__row, .second__row, .third__row, .footer__row {
+  width: 100%;
+}
+
 body {
-  font: 12px Helvetica, sans-serif;
+  font: 12px nudista-web, sans-serif;
   position: relative;
   padding-bottom: 12em;
 }
@@ -23,7 +27,7 @@ body {
 .navi {
   background-color: #f8485e;
   height: 5em;
-  font: 12px Helvetica, sans-serif;
+  font: 12px nudista-web, sans-serif;
 }
 
 .navi__logospace {
@@ -49,60 +53,149 @@ body {
 }
 
 .navi__link {
-  font: bold 24px Helvetica, sans-serif;
+  font: bold 24px nudista-web, sans-serif;
   color: #fedd00;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .navi__link:hover {
-  color: #74d1ea;
+  color: white;
 }
 
 .navi__link-divider {
-  font: bold 24px Helvetica, sans-serif;
+  font: bold 24px nudista-web, sans-serif;
   color: #74d1ea;
 }
 
 .welcome {
+  height: 50em;
+  width: 100%;
   background-image: url(/img/peppers-person.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 50% 50%;
-  height: 50em;
-}
-
-.welcome__row {
-  width: 100%;
-}
-
-.welcome__header {
-  font: 48px Helvetica, sans-serif;
-  color: #222222;
-}
-
-.welcome__text {
-  font: 36px Helvetica, sans-serif;
 }
 
 .welcome__content {
   width: 100%;
   padding: 3em 3em;
   text-align: center;
-  border-radius: 1em;
-  border: 1px dashed #f8485e;
-  background-color: rgba(255, 255, 250, 0.9);
 }
 
-.welcome__header {
-  font: 48px Helvetica, sans-serif;
-  margin: 0;
+.welcome__content__header {
+  font: 400 84px modesto-text, serif;
+  color: #fffffa;
+  text-shadow: 0px 0px 10px rgba(34, 34, 34, 0.5);
 }
 
-.main {
-  padding: 1em 1em;
+.welcome__content__text {
+  font: 24px nudista-web, sans-serif;
+  color: #fffffa;
+  padding: 0em 4em;
+  text-shadow: 0px 0px 10px rgba(34, 34, 34, 0.5);
 }
 
-.main__row {
+.welcome__content__divider {
+  border: 1px solid #fedd00;
+  margin: 3em 3em;
+}
+
+.section-stripe--primary {
+  background-color: #f8485e;
+  height: 0.4em;
+}
+
+.section-stripe--secondary {
+  background-color: #74d1ea;
+  height: 0.4em;
+}
+
+.section-stripe--tertiary {
+  background-color: #fedd00;
+  height: 0.4em;
+}
+
+.section-stripe--white {
+  background-color: white;
+  height: 0.4em;
+}
+
+.first {
+  padding: 5em 0em;
   width: 100%;
+}
+
+.first__row__content {
+  width: 100%;
+  padding: 5em 5em;
+  background-color: #222226;
+  border-radius: 1em;
+}
+
+.first__row__content__logo {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.first__row__content__text {
+  color: white;
+  font: 24px nudista-web, sans-serif;
+  line-height: 1.5em;
+}
+
+.second {
+  width: 100%;
+}
+
+.second__row {
+  height: 30em;
+}
+
+.second__row__left {
+  background-color: #74d1ea;
+}
+
+.second__row__content {
+  width: 100%;
+  padding: 0em;
+  background-color: #74d1ea;
+}
+
+.second__row__content__text {
+  color: #fedd00;
+  font: normal 400 48px modesto-text, serif;
+}
+
+.second__row__right {
+  background-color: #74d1ea;
+}
+
+.third {
+  width: 100%;
+}
+
+.third__row {
+  height: 30em;
+}
+
+.third__row__left {
+  background-color: white;
+}
+
+.third__row__content {
+  width: 100%;
+  padding: 0em;
+  background-color: white;
+}
+
+.third__row__content__text {
+  color: #f8485e;
+  font: normal 400 48px modesto-text, serif;
+}
+
+.third__row__right {
+  background-color: white;
 }
 
 .footer {
@@ -115,10 +208,6 @@ body {
   background-color: #222226;
 }
 
-.footer__row {
-  width: 100%;
-}
-
 .footer__center__link-list {
   list-style: none;
   margin: auto;
@@ -126,8 +215,10 @@ body {
 }
 
 .footer__center__link {
-  font: bold 16px Helvetica, sans-serif;
+  font: bold 16px nudista-web, sans-serif;
   color: #fedd00;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .footer__center__link:hover {

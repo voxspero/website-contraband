@@ -1,20 +1,25 @@
 // colors
 
 $color-background: rgb(255,255,250)
-$color-background-welcome: rgba(255,255,250,0.9)
+$color-background-welcome: rgba(248,72,94,0.9)
 $color-background-footer: rgb(34,34,38)
+
 $color-primary: rgb(248,72,94)
 $color-secondary: rgb(116,209,234)
 $color-tertiary: rgb(254,221,0)
+
 $color-copy: rgb(34,34,34)
+$color-copy-secondary: rgb(255,255,250)
 
 // fonts
 
-$font-headers: 48px Helvetica, sans-serif
-$font-welcome: 36px Helvetica, sans-serif
-$font-copy: 12px Helvetica, sans-serif
-$font-links: bold 24px Helvetica, sans-serif
-$font-links-small: bold 16px Helvetica, sans-serif
+$font-header: normal 400 48px modesto-text, serif
+$font-welcome-header: 400 84px modesto-text, serif
+$font-welcome: 24px nudista-web, sans-serif
+$font-copy: 12px nudista-web, sans-serif
+$font-links: bold 24px nudista-web, sans-serif
+$font-links-small: bold 16px nudista-web, sans-serif
+$font-blurb: 24px nudista-web, sans-serif
 
 // attribute blocks to inherit
 
@@ -25,6 +30,9 @@ $font-links-small: bold 16px Helvetica, sans-serif
     display: flex
     align-items: center
     justify-content: center
+
+%row-width-100
+    width: 100%
 
 // styles
 
@@ -62,10 +70,11 @@ body
         @extend %no-decoration
         font: $font-links
         color: $color-tertiary
+        transition: 0.3s
 
     &__link:hover
         @extend %no-decoration
-        color: $color-secondary
+        color: white
 
     &__link-divider
         font: $font-links
@@ -74,6 +83,9 @@ body
 // welcome
 .welcome
     @extend %flexbox-centered
+    height: 50em
+    width: 100%
+
     background-image: url(/img/peppers-person.jpg)
         // Photo by Randy Fath on Unsplash (peppers.jpg)
         // Photo by Clint Bustrillos on Unsplash (peppers-plant.jpg)
@@ -81,37 +93,135 @@ body
     background-repeat: no-repeat
     background-size: 100%
     background-position: 50% 50%
-    height: 50em
+
 
     &__row
-        width: 100%
+        @extend %row-width-100
 
-    &__header
-        font: $font-headers
-        color: $color-copy
-
-    &__text
-        font: $font-welcome
-
+    
     &__content
         width: 100%
         padding: 3em 3em
         text-align: center
-        border-radius: 1em
-        border: 1px dashed $color-primary
-        background-color: $color-background-welcome
+        // border-radius: 1em
+        // border: 1px solid $color-primary
+        // background-color: $color-background-welcome
 
-    &__header
-        font: $font-headers
-        margin: 0
+        &__header
+            font: $font-welcome-header
+            color: $color-copy-secondary
+            text-shadow: 0px 0px 10px rgba(34,34,34,0.5)
 
-// main page content
-.main
+        &__text
+            font: $font-welcome
+            color: $color-copy-secondary
+            padding: 0em 4em
+            text-shadow: 0px 0px 10px rgba(34,34,34,0.5)
+        
+        &__divider
+            border: 1px solid $color-tertiary
+            margin: 3em 3em
+
+// colored stripes that divide each section
+.section-stripe
+    &--primary
+        background-color: $color-primary
+        height: 0.4em
+
+    &--secondary
+        background-color: $color-secondary
+        height: 0.4em
+
+    &--tertiary
+        background-color: $color-tertiary
+        height: 0.4em
+
+    &--white
+        background-color: white
+        height: 0.4em
+
+// first section
+.first
     @extend %flexbox-centered
-    padding: 1em 1em
+    padding: 5em 0em
+    width: 100%
 
     &__row
-        width: 100%
+        @extend %row-width-100
+    
+        &__content
+            width: 100%
+            padding: 5em 5em
+            background-color: $color-background-footer
+            border-radius: 1em
+
+            &__logo
+                max-width: 100%
+                max-height: 100%
+
+            &__textspace
+                @extend %flexbox-centered
+
+            &__text
+                color: white
+                font: $font-blurb
+                line-height: 1.5em
+
+// second section
+.second
+    @extend %flexbox-centered
+    width: 100%
+
+    &__row
+        @extend %row-width-100
+        height: 30em // remove
+
+        &__left
+            background-color: $color-secondary
+
+        &__content
+            @extend %flexbox-centered
+            width: 100%
+            padding: 0em
+            background-color: $color-secondary
+
+            &__textspace
+                @extend %flexbox-centered
+
+            &__text
+                color: $color-tertiary
+                font: $font-header
+
+        &__right
+            background-color: $color-secondary
+
+// third section
+.third
+    @extend %flexbox-centered
+    width: 100%
+
+    &__row
+        @extend %row-width-100
+        height: 30em // remove
+
+        &__left
+            background-color: white
+
+        &__content
+            @extend %flexbox-centered
+            width: 100%
+            padding: 0em
+            background-color: white
+
+            &__textspace
+                @extend %flexbox-centered
+
+            &__text
+                color: $color-primary
+                font: $font-header
+
+        &__right
+            background-color: white
 
 // footer
 .footer 
@@ -125,7 +235,7 @@ body
     background-color: $color-background-footer
 
     &__row
-        width: 100%
+        @extend %row-width-100
 
     &__left
         @extend %flexbox-centered
@@ -142,6 +252,7 @@ body
             @extend %no-decoration
             font: $font-links-small
             color: $color-tertiary
+            transition: 0.3s
 
         &__link:hover
             @extend %no-decoration
