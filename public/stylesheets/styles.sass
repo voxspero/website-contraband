@@ -1,21 +1,41 @@
-$color-background: rgb(255, 255, 239)
-$color-primary: rgb(248, 72, 94)
+// colors
+
+$color-background: rgb(255,255,250)
+$color-background-welcome: rgba(255,255,250,0.9)
+$color-background-footer: rgb(34,34,38)
+$color-primary: rgb(248,72,94)
 $color-secondary: rgb(116,209,234)
 $color-tertiary: rgb(254,221,0)
+$color-copy: rgb(34,34,34)
+
+// fonts
+
 $font-headers: 48px Helvetica, sans-serif
+$font-welcome: 36px Helvetica, sans-serif
 $font-copy: 12px Helvetica, sans-serif
 $font-links: bold 24px Helvetica, sans-serif
+$font-links-small: bold 16px Helvetica, sans-serif
 
-body
-    font: $font-copy
+// attribute blocks to inherit
 
 %no-decoration
     text-decoration: none
 
-.navi
+%flexbox-centered
     display: flex
     align-items: center
+    justify-content: center
+
+// styles
+
+body
+    font: $font-copy
     position: relative
+    padding-bottom: 12em
+
+// navigation
+.navi
+    @extend %flexbox-centered
     background-color: $color-primary
     height: 5em
     font: $font-copy
@@ -27,8 +47,8 @@ body
         margin: 0.5em 0 0 1em
 
     &__logotype
-        height: 65%
-        width: 65%
+        height: 6em
+        width: auto
 
     &__link-list
         margin: auto
@@ -51,27 +71,93 @@ body
         font: $font-links
         color: $color-secondary
 
+// welcome
 .welcome
-    display: flex
-    align-items: center
-    justify-content: center
-    background-color: $color-background
-    height: 26em
+    @extend %flexbox-centered
+    background-image: url(/img/peppers-person.jpg)
+        // Photo by Randy Fath on Unsplash (peppers.jpg)
+        // Photo by Clint Bustrillos on Unsplash (peppers-plant.jpg)
+        // Photo by Gabrielle Cepella on Unsplash (peppers-person.jpg)
+    background-repeat: no-repeat
+    background-size: 100%
+    background-position: 50% 50%
+    height: 50em
+
+    &__row
+        width: 100%
 
     &__header
         font: $font-headers
+        color: $color-copy
 
     &__text
-        font: $font-copy
-
-    &__bottom-line
-        border: 1px dashed $color-primary
+        font: $font-welcome
 
     &__content
+        width: 100%
+        padding: 3em 3em
         text-align: center
+        border-radius: 1em
+        border: 1px dashed $color-primary
+        background-color: $color-background-welcome
 
     &__header
         font: $font-headers
+        margin: 0
 
-    // &__background
-    //     background-image: url('')
+// main page content
+.main
+    @extend %flexbox-centered
+    padding: 1em 1em
+
+    &__row
+        width: 100%
+
+// footer
+.footer 
+    @extend %flexbox-centered
+    position: absolute
+    right: 0
+    bottom: 0
+    left: 0
+    padding: 0
+    height: 12em
+    background-color: $color-background-footer
+
+    &__row
+        width: 100%
+
+    &__left
+        @extend %flexbox-centered
+
+    &__center
+        @extend %flexbox-centered
+
+        &__link-list
+            list-style: none
+            margin: auto
+            padding: 1em 0
+
+        &__link
+            @extend %no-decoration
+            font: $font-links-small
+            color: $color-tertiary
+
+        &__link:hover
+            @extend %no-decoration
+            color: $color-secondary
+
+        &__link::before
+            content: "\2022"
+            color: $color-primary // Change the color
+            font-weight: bold
+            display: inline-block // Needed to add space between the bullet and the text
+            width: 0.75rem // Also needed for space (tweak if needed)
+            margin-left: -1em; // Also needed for space (tweak if needed)
+
+    &__right
+        @extend %flexbox-centered
+
+        &__copyright
+            color: white
+            font-weight: bold
